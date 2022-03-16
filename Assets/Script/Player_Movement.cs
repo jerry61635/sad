@@ -11,7 +11,13 @@ public class Player_Movement : MonoBehaviour
     float SmoothVelocity;
 
     [SerializeField]
+    float jumpHeight = 5f;
+
+    [SerializeField]
     float speed = 5f;
+
+    [SerializeField]
+    float runningSpeed = 8f;
 
     [SerializeField]
     float gravity = -9.8f;
@@ -29,7 +35,17 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isground = Physics.CheckSphere(groundCheck.position, 2.0f, ground);
+        float current_speed;
+        if (Input.GetKey("left shift"))
+        {
+            current_speed = runningSpeed;
+        }
+        else
+        {
+            current_speed = speed;
+        }
+
+        isground = Physics.CheckSphere(groundCheck.position, 0.5f, ground);
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -41,7 +57,12 @@ public class Player_Movement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 movedir = Quaternion.Euler(0f, turn, 0f) * Vector3.forward;
-            controller.Move(movedir.normalized * speed * Time.deltaTime);
+            controller.Move(movedir.normalized * current_speed * Time.deltaTime);
+        }
+
+        if (Input.GetButton("Jump") && isground)
+        {
+            velocity.y = Mathf.Sqrt(2 * -gravity * jumpHeight);
         }
 
         if(isground && velocity.y < 0)
