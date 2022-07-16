@@ -19,7 +19,7 @@ public class PlayerHUD : NetworkBehaviour
         if (IsLocalPlayer)
         {
             playerName.transform.LookAt(GameManager.Instance.Cam.transform);
-            playerName.text = Player_Movement.instance.name_p;
         }
+        playerName.text = Player.instance.name_p;
     }
 }

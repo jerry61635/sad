@@ -10,6 +10,7 @@ public class GameManager : NetworkBehaviour
     //private GameObject gameObject;
 
     public List<GameObject> playerList = new List<GameObject>();
+    public List<string> playerName = new List<string>();
 
     public Camera Cam;
     public Cinemachine.CinemachineFreeLook FreeLook;
@@ -26,23 +27,33 @@ public class GameManager : NetworkBehaviour
             Instance = this;
     }
 
+    void Start()
+    {
+        Debug.developerConsoleVisible = true;
+    }
 
     private void Update()
     {
+        //if(IsServer) SyncPlayerClientRpc();
+        //else SyncPlayerServerRpc();
+
         for(int i = 0; i < playerList.Count; i++)
         {
+            if(playerList.Count == 0) break;
+            
             if(playerList[i] == null)
             {
                 playerList.RemoveAt(i);
+                playerName.RemoveAt(i);
             }
+        }
+
+        for(int i = 0; i < playerList.Count; i++)
+        {
+            playerList[i].name = playerName[i];
         }
     }
 
-    [ClientRpc]
-    public void SyncPlayerClientRpc()
-    {
-
-    }
 
     /*
         private Player_Movement m_localPlayer;
