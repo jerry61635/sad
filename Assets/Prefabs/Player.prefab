@@ -307,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9043944257684453030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.32, y: 1.1, z: 113.455}
+  m_LocalPosition: {x: 490, y: 38, z: 480}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9043944257505183863}
@@ -328,8 +328,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 9043944257684453029}
-  netObject: {fileID: 0}
-  name_p: 
+  horizontal: 0
+  vertical: 0
+  jump: 0
+  dash: 0
   pause: 0
   interact: 0
   jumpHeight: 2
@@ -344,6 +346,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  name_p: 
 --- !u!143 &9043944257684453029
 CharacterController:
   m_ObjectHideFlags: 0

@@ -52,6 +52,7 @@ public class GameManager : NetworkBehaviour
         {
             playerList[i].name = playerName[i];
         }
+        //Debug.Log(playerList);
     }
 
 

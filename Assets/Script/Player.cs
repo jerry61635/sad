@@ -66,8 +66,6 @@ public class Player : Player_Movement
     [ServerRpc(RequireOwnership = false)]
     public void SyncPlayerServerRpc(string playerName)
     {
-        if (!IsServer) return;
-
         SyncPlayerClientRpc(playerName);
     }
 
