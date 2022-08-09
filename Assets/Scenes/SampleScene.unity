@@ -3020,15 +3020,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aModeAttack: {fileID: 2784832998999043474, guid: aa27b9825b24aea43897aecc52c6acb8, type: 3}
+  bModeAttack: {fileID: 8489478904231214024, guid: 6e6e7ce161a70d249828dce0543e07f1, type: 3}
+  appModeAttack: {fileID: 1600082991251603190, guid: 5ac8910d8f5591543922dfda03ec1c5b, type: 3}
+  bppModeAttack: {fileID: 3865466065112224996, guid: c0f7789aef3774442af64ccb3b220ed4, type: 3}
+  targetPlayer: {fileID: 1192285839}
+  triggerPrefab: []
   phase: 0
   health: 100
   BossState: 0
-  speed: 4.5
-  Idle_time: 3
+  aModeDelay: 1
+  aSpeed: 20
+  bModeDelay: 0.5
+  bSpeed: 5
+  bTimer: 1
+  cModeDelay: 0.5
+  cTimer: 0.3
+  rushSpeed: 100
+  rushRadius: 1
+  stage: 0
   agent: {fileID: 2102580646}
   detectRadius: 30
+  walkSpeed: 5
   stopDistance: 10
-  targetPlayer: {fileID: 1192285839}
 --- !u!4 &2102580645
 Transform:
   m_ObjectHideFlags: 0
@@ -3037,7 +3050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102580643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 485.9, y: 35.222, z: 488.7}
+  m_LocalPosition: {x: 485.79, y: 35.222, z: 488.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1434844879}
