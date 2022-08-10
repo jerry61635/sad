@@ -78,11 +78,19 @@ public class ShuraMovement : MonoBehaviour
         {
             case State.Sleep:
                 //Do nothing until player into detect range
-                if (currentDistance <= detectRadius) 
+                if (currentDistance <= detectRadius)
                     BossState = State.Idle;
                 break;
 
             case State.Idle:
+                //清除trigger列表以及世界中的物件
+                if (triggerPrefab.Count != 0) 
+                { 
+                    for (int i = 0; i < triggerPrefab.Count; i++) Destroy(triggerPrefab[i]);
+                    triggerPrefab.Clear();
+                }
+
+                //設定追擊玩家
                 agent.SetDestination(targetPlayer.transform.position);
 
                 if (currentDistance <= stopDistance)
@@ -121,6 +129,7 @@ public class ShuraMovement : MonoBehaviour
                     else
                     {
                         delayTime = cModeDelay;
+                        cModePrepare();
                         BossState = State.Mode_C;
                     }
                 }
@@ -188,9 +197,6 @@ public class ShuraMovement : MonoBehaviour
                 else if (delayTime <= 0 && triggerPrefab[0].transform.position.y >= targetPlayer.transform.position.y)
                 {
                     Debug.Log("Attack Done!");
-                    //移除A物件 以及從List中除名
-                    Destroy(triggerPrefab[0]);
-                    triggerPrefab.RemoveAt(0);
 
                     //階段1 切回Idle
                     if (phase == 0) BossState = State.Idle;
@@ -220,13 +226,13 @@ public class ShuraMovement : MonoBehaviour
 
             case State.Mode_B:
                 //攻擊前的延遲
-                if(delayTime >= 0) delayTime -= Time.deltaTime;
+                DelayMove(delayTime);
 
                 //生成子彈
-                else if(triggerPrefab.Count == 0) bModePrepare();
+                if(triggerPrefab.Count == 0) bModePrepare();
 
                 //子彈飛行
-                else if (timer > 0)
+                if (timer > 0)
                 {
                     timer -= Time.deltaTime;
                     foreach (GameObject i in triggerPrefab)
@@ -239,13 +245,12 @@ public class ShuraMovement : MonoBehaviour
                 else
                 {
                     Debug.Log("Attack Done!");
-                    
-                    //移除B物件 以及從List中除名
-                    for (int i = 0; i < triggerPrefab.Count; i++) Destroy(triggerPrefab[0]);
-                    foreach (GameObject i in triggerPrefab) triggerPrefab.Remove(i);
 
                     //階段1 切回Idle
-                    if (phase == 0) BossState = State.Idle;
+                    if (phase == 0)
+                    {
+                        BossState = State.Idle;
+                    }
 
                     //階段2
                     else if (phase == 1)
@@ -269,44 +274,47 @@ public class ShuraMovement : MonoBehaviour
                             BossState = State.Mode_A;
                         }
                         //其餘狀況 運行至第三步驟時 回到Idle
-                        else if(stage == 3) BossState = State.Idle;
+                        else if (stage == 3) BossState = State.Idle;
                     }
                 }
 
                 break;
 
             case State.Mode_C:
-                if (delayTime >= 0) delayTime -= Time.deltaTime;
-                else cModePrepare();
+                DelayMove(delayTime);
 
-                if (timer >= 0) timer -= Time.deltaTime;
+                if (timer >= 0)
+                {
+                    timer -= Time.deltaTime;
+                }
                 else
                 {
                     agent.speed = walkSpeed;
                     agent.stoppingDistance = stopDistance;
-                }
-                Debug.Log("Attack Done!");
 
-                if (phase == 0) BossState = State.Idle;
-                else if(phase == 1)
-                {
-                    coinGenerator();
-                    if (randAttackMode % 4 == 2)
+                    Debug.Log("Attack Done!");
+
+                    if (phase == 0) BossState = State.Idle;
+                    else if (phase == 1)
                     {
-                        aModePrepare();
-                        BossState = State.Mode_A;
+                        coinGenerator();
+                        if (randAttackMode % 4 == 2)
+                        {
+                            aModePrepare();
+                            BossState = State.Mode_A;
+                        }
+                        else BossState = State.Mode_B;
                     }
-                    else BossState = State.Mode_B;
-                }
-                else
-                {
-                    coinGenerator();
-                    if (randAttackMode % 4 == 2)
+                    else
                     {
-                        aModePrepare();
-                        BossState = State.Mode_A;
+                        coinGenerator();
+                        if (randAttackMode % 4 == 2)
+                        {
+                            aModePrepare();
+                            BossState = State.Mode_A;
+                        }
+                        else BossState = State.Mode_B;
                     }
-                    else BossState = State.Mode_B;
                 }
                 break;
 
@@ -332,7 +340,9 @@ public class ShuraMovement : MonoBehaviour
         {
             delayTime = aModeDelay;
             timer = 0.1f;
+            //A+的生成物
             if(stage == 3 && randAttackMode % 4 == 0) triggerPrefab.Add(Instantiate(appModeAttack, targetPlayer.transform.position - new Vector3(0f, 2f, 0f), targetPlayer.transform.rotation));
+            //A的生成物
             else triggerPrefab.Add(Instantiate(aModeAttack, targetPlayer.transform.position - new Vector3(0f, 2f, 0f), targetPlayer.transform.rotation));
         }
 
@@ -340,6 +350,7 @@ public class ShuraMovement : MonoBehaviour
         {
             timer = bTimer;
 
+            //B+的生成物
             if (stage == 3 && randAttackMode % 4 == 1)
             {
                 //正前方
@@ -353,6 +364,8 @@ public class ShuraMovement : MonoBehaviour
                 //右方
                 triggerPrefab.Add(Instantiate(bppModeAttack, gameObject.transform.position + gameObject.transform.forward * Mathf.Cos(45) * 2f + gameObject.transform.right * Mathf.Sin(45) * 2f, gameObject.transform.rotation * Quaternion.Euler(0, 45f, 0)));
             }
+
+            //B的生成物
             else
             {
                 //正前方
@@ -378,6 +391,17 @@ public class ShuraMovement : MonoBehaviour
         void coinGenerator()
         {
             //用randCoin做生成判斷
+        }
+
+        //此函式是用於模擬攻擊前的準備動畫 未來動畫引進後會修改
+        void DelayMove(float timer)
+        {
+            while(timer >= 0)
+            {
+                timer -= Time.deltaTime;
+            }
+
+            return;
         }
     }
 }
