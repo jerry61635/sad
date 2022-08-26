@@ -404,10 +404,10 @@ public class ShuraMovement : MonoBehaviour
             return;
         }
     }
+    enum State
+    {
+        Sleep, Idle, Attack, Mode_A, Mode_B, Mode_C
+    }
 }
 
 
-enum State
-{
-    Sleep, Idle, Attack, Mode_A, Mode_B, Mode_C
-}

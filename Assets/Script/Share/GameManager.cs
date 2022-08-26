@@ -10,6 +10,7 @@ public class GameManager : NetworkBehaviour
     //private GameObject gameObject;
 
     public List<GameObject> playerList = new List<GameObject>();
+    public List<PlayerInSoul> playerInSoulList = new List<PlayerInSoul>();
     public List<string> playerName = new List<string>();
 
     public Camera Cam;
@@ -52,6 +53,9 @@ public class GameManager : NetworkBehaviour
         {
             playerList[i].name = playerName[i];
         }
+
+
+
         //Debug.Log(playerList);
     }
 
