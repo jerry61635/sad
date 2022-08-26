@@ -54,7 +54,13 @@ public class GameManager : NetworkBehaviour
             playerList[i].name = playerName[i];
         }
 
-
+        if(playerInSoulList.Count != 0)
+        {
+            for(int i = 0; i < playerInSoulList.Count; i++)
+            {
+                playerInSoulList[i].ID = i;
+            }
+        }
 
         //Debug.Log(playerList);
     }
