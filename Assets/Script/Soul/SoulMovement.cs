@@ -55,11 +55,12 @@ public class SoulMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        //Debug.Log(timer);
-        //尋找最接近的玩家
-        float minDistance = 100f;
-        int j = 0;
-        if (GameManager.Instance.playerList.Count != 0) {
+    {        
+        //Debug.Log(timer);
+        if (GameManager.Instance.playerList.Count != 0)
+        {
+            int j = 0;
+            float minDistance = 100f;
             foreach (GameObject i in GameManager.Instance.playerList)
             {
                 playerDistance[j] = Vector3.Distance(gameObject.transform.position, i.transform.position); //更新每個玩家與Soul的距離

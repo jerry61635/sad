@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 3677183114065003144}
   - component: {fileID: 4196946496261759877}
   - component: {fileID: 2462371011689334449}
+  - component: {fileID: -9174235038840898249}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -456,6 +457,19 @@ MonoBehaviour:
   soulOut: 0
   poison1: 0
   poison2: 0
+--- !u!114 &-9174235038840898249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043944257684453030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d41f18a95874274e8d644a16d558ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
 --- !u!1 &9043944258263610573
 GameObject:
   m_ObjectHideFlags: 0

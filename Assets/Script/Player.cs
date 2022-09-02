@@ -31,6 +31,7 @@ public class Player : Player_Movement
             GameManager.Instance.FreeLook.m_LookAt = gameObject.transform;
             GameManager.Instance.FreeLook.m_Follow = gameObject.transform;
         }
+        GameManager.Instance.playerData.Add(this);
     }
 
     // Update is called once per frame

@@ -24,6 +24,7 @@ public class Player_Movement : NetworkBehaviour
     float speed;
     [SerializeField]
     float runningSpeed;
+    public float speedDelta;
     public float autoRuntime;
     float runTime = 0f;
     float current_speed;
@@ -38,6 +39,7 @@ public class Player_Movement : NetworkBehaviour
     bool isground;
     public Transform groundCheck;
     public LayerMask ground;
+    public bool stun;
 
     public void CharacterMove()
     {
@@ -57,14 +59,14 @@ public class Player_Movement : NetworkBehaviour
 
         //moving
         isground = Physics.CheckSphere(groundCheck.position, 0.5f, ground);
-        if (direction.magnitude >= 0.1f && IsLocalPlayer)
+        if (direction.magnitude >= 0.1f && IsLocalPlayer && !stun)
         {
             float turn = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + GameManager.Instance.Cam.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, turn, ref SmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 movedir = Quaternion.Euler(0f, turn, 0f) * Vector3.forward;
-            controller.Move(movedir.normalized * current_speed * Time.deltaTime);
+            controller.Move(movedir.normalized * current_speed * Time.deltaTime * speedDelta);
         }
 
         //jumping

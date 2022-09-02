@@ -10,7 +10,9 @@ public class GameManager : NetworkBehaviour
     //private GameObject gameObject;
 
     public List<GameObject> playerList = new List<GameObject>();
+    public List<Player> playerData = new List<Player>();
     public List<PlayerInSoul> playerInSoulList = new List<PlayerInSoul>();
+    public List<PlayerInHeart> playerInHeartList = new List<PlayerInHeart>();
     public List<string> playerName = new List<string>();
 
     public Camera Cam;
@@ -59,6 +61,14 @@ public class GameManager : NetworkBehaviour
             for(int i = 0; i < playerInSoulList.Count; i++)
             {
                 playerInSoulList[i].ID = i;
+            }
+        }
+
+        if(playerInHeartList.Count != 0)
+        {
+            for (int i = 0; i < playerInSoulList.Count; i++)
+            {
+                playerInHeartList[i].ID = i;
             }
         }
 
