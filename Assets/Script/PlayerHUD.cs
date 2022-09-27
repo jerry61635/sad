@@ -16,7 +16,10 @@ public class PlayerHUD : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerName.transform.LookAt(GameManager.Instance.Cam.transform);
-        playerName.text = gameObject.name;
+        if (IsLocalPlayer)
+        {
+            playerName.transform.LookAt(GameManager.Instance.Cam.transform);
+            playerName.text = Player_Movement.instance.name_p;
+        }
     }
 }
