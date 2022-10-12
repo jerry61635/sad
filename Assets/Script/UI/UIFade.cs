@@ -27,17 +27,19 @@ public class UIFade : NetworkBehaviour
 
     private void Update()
     {
-        if (chatBox.isFocused) chatFocus = true;
+        if (chatBox.isFocused) 
+        {
+            chatFocus = true;
+            UIHideTime = 3;
+        }
         else chatFocus = false;
-
-        if(Player_Movement.instance.pause || chatFocus) UIHideTime = 3;
 
         if (chatBox.text != "")
         {
             if (Input.GetKeyDown(KeyCode.Return) && IsClient)
             {
-                if (IsServer) SendMessageToChatClientRpc(Player_Movement.instance.name_p + ": " + chatBox.text);
-                else SendMessageToChatServerRpc(Player_Movement.instance.name_p + ": " + chatBox.text);
+                if (IsServer) SendMessageToChatClientRpc(Player.instance.name + ": " + chatBox.text);
+                else SendMessageToChatServerRpc(Player.instance.name + ": " + chatBox.text);
                 chatBox.text = "";
             }
         }

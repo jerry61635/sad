@@ -10,16 +10,27 @@ public class PlayerHUD : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(IsOwner) HUDServerRpc(ConnectHUD.PlayerName);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsLocalPlayer)
-        {
-            playerName.transform.LookAt(GameManager.Instance.Cam.transform);
-            playerName.text = Player_Movement.instance.name_p;
-        }
+        playerName.transform.LookAt(GameManager.Instance.Cam.transform);
+
+        if (IsServer && IsOwner) HUDClientRpc(ConnectHUD.PlayerName);
+    }
+
+    [ServerRpc(RequireOwnership = false )]
+    void HUDServerRpc(string Pname)
+    {
+        HUDClientRpc(Pname);
+        name = Pname;
+    }
+
+    [ClientRpc]
+    void HUDClientRpc(string Pname)
+    {
+        playerName.text = Pname;
     }
 }

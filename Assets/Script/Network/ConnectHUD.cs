@@ -16,7 +16,7 @@ public class ConnectHUD : MonoBehaviour
     GUIStyle m_LabelTextStyle;
 
     // This is needed to make the port field more convenient. GUILayout.TextField is very limited and we want to be able to clear the field entirely so we can't cache this as ushort.
-    string m_PortString = "7777";
+    string m_PortString = "9998";
     string m_ConnectAddress = IPManager.GetIP(ADDRESSFAM.IPv4);
     public static string PlayerName = "Steve";
 
