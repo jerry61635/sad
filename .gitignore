@@ -8,6 +8,8 @@
 !Assets/Scenes
 !Assets/Terrain
 !Assets/Material
+!Assets/URP
+!Assets/TerrainLayers
 !Packages
 !ProjectSettings
 !.gitignore
