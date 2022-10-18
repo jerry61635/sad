@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 6.2, z: -6}
+  m_FollowOffset: {x: 0, y: 6.2, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6985,10 +6985,10 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 522318154}
-    PlayerPrefab: {fileID: 7144511427526836720, guid: 3b10d5a3c5d48c94e981616ed3451dd0, type: 3}
+    PlayerPrefab: {fileID: 3373777925786365544, guid: 3b10d5a3c5d48c94e981616ed3451dd0, type: 3}
     NetworkPrefabs:
     - Override: 0
-      Prefab: {fileID: 7144511427526836720, guid: 3b10d5a3c5d48c94e981616ed3451dd0, type: 3}
+      Prefab: {fileID: 3373777925786365544, guid: 3b10d5a3c5d48c94e981616ed3451dd0, type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
@@ -9077,7 +9077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 6.2, z: -6}
+  m_FollowOffset: {x: 0, y: 6.2, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -12180,7 +12180,7 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 200
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -13179,11 +13179,11 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 11.5
-    m_Radius: 3
+    m_Radius: 4
   - m_Height: 6.2
-    m_Radius: 6
+    m_Radius: 10
   - m_Height: -1.9
-    m_Radius: 5.5
+    m_Radius: 7
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 960101984}
@@ -16145,6 +16145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: []
+  playerData: []
+  playerInSoulList: []
+  playerInHeartList: []
+  playerName: []
   Cam: {fileID: 114982673}
   FreeLook: {fileID: 1103507971}
   chatPanel: {fileID: 1342167644}
@@ -18209,7 +18213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 6.2, z: -6}
+  m_FollowOffset: {x: 0, y: 6.2, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1

@@ -4,12 +4,17 @@
 .vsconfig
 !Assets
 !Assets/Script
+!Assets/Script/*
 !Assets/Prefabs
+!Assets/Prefabs/*
 !Assets/Scenes
 !Assets/Terrain
+!Assets/Terrain/*
 !Assets/Material
+!Assets/Material/*
 !Assets/URP
 !Assets/TerrainLayers
+!Assets/TerrainLayers/*
 !Packages
 !ProjectSettings
 !.gitignore
