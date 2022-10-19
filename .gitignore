@@ -15,6 +15,7 @@
 !Assets/URP
 !Assets/TerrainLayers
 !Assets/TerrainLayers/*
+Assets/*.meta
 !Packages
 !ProjectSettings
 !.gitignore
