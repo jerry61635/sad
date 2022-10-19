@@ -6,9 +6,9 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: layer_GR_Asphalt1_ASGR_Asphalt1_Nd261c09ae55ba1e3
-  m_DiffuseTexture: {fileID: 2800000, guid: 1a925eec37989544899b54f458ec2f08, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: c11fbfccde3717848823659d1dc067bf, type: 3}
+  m_Name: layer_Sand3
+  m_DiffuseTexture: {fileID: 2800000, guid: bfd675cc0db1d4656b75dc6d6ba91142, type: 3}
+  m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 20, y: 20}
   m_TileOffset: {x: 0, y: 0}
