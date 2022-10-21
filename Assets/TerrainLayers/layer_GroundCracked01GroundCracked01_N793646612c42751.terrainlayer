@@ -7,8 +7,8 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: layer_GroundCracked01GroundCracked01_N793646612c42751
-  m_DiffuseTexture: {fileID: 0}
-  m_NormalMapTexture: {fileID: 0}
+  m_DiffuseTexture: {fileID: 2800000, guid: 6aca9c14a2621df4295bcf3386f49563, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: e34b74b68a147ac44ace09d98eae3f9a, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 4, y: 4}
   m_TileOffset: {x: 0, y: 0}

@@ -7,8 +7,8 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: layer_GroundDryLeaves01GroundDryLeaves01_N793646612c42751
-  m_DiffuseTexture: {fileID: 0}
-  m_NormalMapTexture: {fileID: 0}
+  m_DiffuseTexture: {fileID: 2800000, guid: 9682e4bbb97d1f44ca664cb509a4456a, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 94c6cba59637d47449257878cccffc02, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 10, y: 10}
   m_TileOffset: {x: 0, y: 0}

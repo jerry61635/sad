@@ -7,8 +7,8 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: layer_RockSharp 1_DRockSharp 1_N793646612c42751
-  m_DiffuseTexture: {fileID: 2800000, guid: d2504622f77f75f41b1fbfcd72fc3dc3, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: 35d3ff6cdcda018438ec443fd827b089, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: d58ea4ebfbb590b4e984fd4f5fe4ff0a, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 2399c491062a850459aadfc45601a0b7, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 3, y: 3}
   m_TileOffset: {x: 0, y: 0}
