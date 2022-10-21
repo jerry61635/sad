@@ -12164,7 +12164,7 @@ TerrainCollider:
   m_GameObject: {fileID: 1024891604}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 09d64f5adf2d147a8ac1efd88014dfa8, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 1d8d6559887c1e245821a129b37a7224, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1024891606
 Terrain:
@@ -12175,7 +12175,7 @@ Terrain:
   m_GameObject: {fileID: 1024891604}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 09d64f5adf2d147a8ac1efd88014dfa8, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 1d8d6559887c1e245821a129b37a7224, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 200
@@ -12207,7 +12207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024891604}
   m_LocalRotation: {x: -0, y: -0.0029499875, z: -0, w: 0.99999565}
-  m_LocalPosition: {x: -74.8, y: -1.6592143, z: -124.529}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1633033087}
@@ -12712,7 +12712,7 @@ GameObject:
   - component: {fileID: 1078949572}
   - component: {fileID: 1078949571}
   m_Layer: 6
-  m_Name: Terrain_(0.0, 0.0, 1000.0)
+  m_Name: Terrain 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12727,7 +12727,7 @@ TerrainCollider:
   m_GameObject: {fileID: 1078949570}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 5f55469fc817a4f14804eaa8779f82f9, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: ba90b87cf77b90740a77a8f91f842976, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &1078949572
 Terrain:
@@ -12738,7 +12738,7 @@ Terrain:
   m_GameObject: {fileID: 1078949570}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 5f55469fc817a4f14804eaa8779f82f9, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: ba90b87cf77b90740a77a8f91f842976, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -12770,7 +12770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078949570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -74.78053, y: -1.6592143, z: 875.4775}
+  m_LocalPosition: {x: 0, y: 0, z: 1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1633033087}
@@ -19844,7 +19844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633033086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.739174, y: 1.6592143, z: 124.5225}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1024891607}
